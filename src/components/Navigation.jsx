@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navigation = () => {
   const style = {
@@ -17,8 +17,24 @@ const Navigation = () => {
         <div className="site-logo">VANLIFE</div>
       </Link>
       <nav>
-        <Link to={`/about`}>About</Link>
-        <Link to={`/vans`}>Vans</Link>
+        <NavLink
+          to={`/host`}
+          className={({ isActive }) => (isActive ? "isActive" : "")}
+        >
+          Host
+        </NavLink>
+        <NavLink
+          to={`/about`}
+          className={({ isActive }) => (isActive ? "isActive" : "")}
+        >
+          About
+        </NavLink>
+        <NavLink
+          to={`/vans`}
+          className={({ isActive }) => (isActive ? "isActive" : "")}
+        >
+          Vans
+        </NavLink>
       </nav>
     </header>
   );

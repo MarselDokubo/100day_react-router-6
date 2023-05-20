@@ -19,7 +19,6 @@ const Vans = () => {
       .then((res) => res.json())
       .then((data) => setVans(data.vans));
   }, []);
-
   const vanElements = vans.map((van) => (
     <div key={van.id} className="van-tile">
       <Link to={`/vans/${van.id}`}>
